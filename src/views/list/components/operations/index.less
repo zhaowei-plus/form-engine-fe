@@ -1,0 +1,35 @@
+.operations {
+  display: flex;
+  justify-content: center;
+
+  a {
+    height: 14px;
+    line-height: 14px;
+    padding: 0 8px;
+    text-align: center;
+
+    &+a {
+      border-left: 1px solid #CBCFD6;
+    }
+  }
+}
+
+.operations-menu {
+  width: 120px;
+  height: 80px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+
+  a {
+    color: #262A30;
+  }
+
+  .item+.item {
+    a {
+      color: #F53939;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.search {
+  display: flex;
+  margin-bottom: 20px;
+
+  .ant-form-item {
+    display: grid;
+    grid-template-columns: 70px 200px;
+
+    &:before {
+      display: none;
+    }
+
+    .ant-form-item-label {
+      height: 40px !important;
+      line-height: 40px !important;
+    }
+
+    .ant-form-item-control-wrapper {
+      .ant-select {
+        width: 100% !important;
+      }
+    }
+  }
+
+  &__footer {
+    height: 40px;
+    line-height: 40px;
+    flex: 1;
+    display: flex;
+    min-width: 160px;
+    justify-content: flex-start;
+    align-items: center;
+
+    .ant-btn {
+      &+.ant-btn {
+        margin-left: 10px;
+      }
+    }
+  }
+}

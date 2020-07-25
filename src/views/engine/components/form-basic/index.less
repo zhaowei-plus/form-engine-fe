@@ -1,0 +1,41 @@
+.form-basic {
+  flex: 1;
+  display: flex;
+  width: 820px;
+  height: calc(100vh - 170px);
+  border: 1px solid #E9ECF0;
+  padding: 56px 120px;
+  margin: 0 auto 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &>div {
+    width: 100%;
+  }
+
+  form textarea.ant-input {
+    resize: none;
+  }
+
+  .footer {
+    border: 1px solid red;
+    display: flex;
+
+    .button-group {
+      width: 300px;
+      border: 1px solid red;
+
+      .inline-view {
+        width: 260px;
+        border: 1px solid red;
+      }
+    }
+
+    .ant-btn {
+      &+.ant-btn {
+        margin-left: 10px;
+      }
+    }
+  }
+}

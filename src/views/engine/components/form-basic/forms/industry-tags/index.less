@@ -1,0 +1,58 @@
+.industry-tags {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .tag {
+    margin: 0 0 8px 8px;
+    width: 72px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    border: 1px solid #E9ECF0;
+    text-align: center;
+    cursor: pointer;
+
+    &:nth-child(6n+1){
+      margin-left: 0;
+    }
+
+    &.checked {
+      border-color: #2E58D6;
+      color: #262A30;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        border-width: 0;
+        content: '';
+        right: -1px;
+        bottom: -1px;
+        width: 12px;
+        height: 12px;
+        background-image: url("./images/checked.png");
+      }
+    }
+
+    &__checked {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 11px;
+      height: 11px;
+
+
+    }
+
+    &__title {
+      font-size: 14px;
+      color: #262A30; // #2E58D6;
+    }
+  }
+
+  .detail {
+    margin-right: 10px;
+  }
+}

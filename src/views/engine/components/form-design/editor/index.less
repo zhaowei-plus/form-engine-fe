@@ -1,0 +1,182 @@
+@widgetHeight: 40px;
+@widgetBorder: gray; // #E9ECF0;
+@activeBorder: #2E58D6;
+@dragBorder: #DC143C; //#91A6E5;
+
+.editor {
+  width: 552px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E9ECF0;
+  margin-bottom: 16px;
+  padding: 24px;
+  padding-right: 0;
+  background-color: #fff;
+
+  .editor-scroll {
+    position: relative;
+    padding-right: 24px;
+    overflow-y: auto;
+    height: 100%;
+
+    .editor-empty {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      margin: -50px 0 0 -124px;
+      color: #5C626B;
+      text-align: center;
+
+      >img {
+        margin-bottom: 20px;
+        display: block;
+        width: 224px;
+      }
+    }
+
+    &>.widgets {
+      min-height: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .widgets {
+    position: relative;
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    // padding: 4px;
+    border: 1px dashed @widgetBorder;
+    margin-bottom: 20px;
+
+    &.hover {
+      border-color: rgba(46, 88, 214, 1);
+    }
+
+    .empty {
+      border: 1px solid red;
+      flex: 1;
+      height: 48px;
+      justify-self: center;
+      line-height: 48px;
+      padding: 0 10px;
+    }
+
+    .widget-container {
+      position: relative;
+      padding: 4px;
+
+      &:first-child {
+        padding-top: 8px;
+      }
+
+      &:last-child {
+        padding-bottom: 8px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-top: 2px solid green;
+        visibility: hidden;
+      }
+
+      &.top {
+        &:before {
+          top: 0;
+        }
+      }
+
+      &.bottom {
+        &:before {
+          bottom: 0;
+        }
+      }
+
+      &.visible {
+        &:before {
+          visibility: visible;
+        }
+      }
+
+      .prepare {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-top: 2px solid green;
+        visibility: hidden;
+
+        &.top {
+          top: 0;
+        }
+
+        &.bottom {
+          bottom: 0;
+        }
+      }
+
+      .widget,
+      .block {
+        width: 100%;
+        cursor: move;
+        border: 1px dashed @widgetBorder;
+
+        &.dragging,
+        &.hover {
+          border-color: @dragBorder;
+        }
+
+        &.active {
+          border: 1px solid @activeBorder;
+        }
+
+        .operation {
+          visibility: hidden;
+          position: absolute;
+          width: 16px;
+          top: 8px;
+          right: 4px;
+          height: 16px;
+          line-height: 12px;
+          text-align: center;
+          color: #fff;
+          font-size: 20px;
+
+          .delete:after {
+            cursor: default;
+            text-align: center;
+            width: 16px;
+            height: 16px;
+            line-height: 12px;
+            color: #fff;
+            font-size: 20px;
+            background-color: #91A6E5;
+            display: block;
+            content: '×';
+            position: absolute;
+          }
+        }
+      }
+
+      .widget {
+        max-height: 100px;
+        height: @widgetHeight;
+        line-height: @widgetHeight;
+        text-align: left;
+        padding: 0 10px;
+      }
+
+      .block {
+        padding: 0 10px;
+      }
+
+    }
+  }
+
+  .visible {
+    visibility: visible !important;
+  }
+}

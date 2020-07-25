@@ -1,0 +1,58 @@
+.engine {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #F7F8F9;
+
+  &__header {
+    margin-bottom: 16px;
+    height: 40px;
+    background: rgba(233, 236, 240, 1);
+    display: flex;
+
+    &>.ant-btn {
+
+      .iconfont {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+    }
+
+    .back {
+      margin: 8px 0 0 16px;
+    }
+
+    .steps {
+      padding-top: 8px;
+      margin: 0 auto;
+      width: 480px;
+    }
+
+    .recover {
+      margin-top: 8px;
+      margin-right: 16px;
+      float: right;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    .ant-btn {
+      margin: 0 10px;
+    }
+  }
+}
+
+.ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title:after,
+.ant-steps-item-wait>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title:after {
+  background-color: #CBCFD6;
+}
